@@ -1,4 +1,3 @@
-const { stat } = require('fs');
 /* 
     Main file for API
 */
@@ -54,7 +53,7 @@ const server = http.createServer((req, res) => {
 
         // Check the handlers and assign them properly here as per there nature.
         const chosenHandler = typeof(router[trimmedUrl]) !== 'undefined' ? router[trimmedUrl] : handlers.notFoundHandler;
-        console.log(chosenHandler, chosenHandler.toString());
+
         // Now we have the chosen handler now set the statusCodes and payload
         // Route the request to the specific handler
         chosenHandler(data, (statusCode, payload) => {
