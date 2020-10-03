@@ -57,8 +57,9 @@ const server = http.createServer((req, res) => {
         // Now we have the chosen handler now set the statusCodes and payload
         // Route the request to the specific handler
         chosenHandler(data, (statusCode, payload) => {
+
             // Use the status from the handler or default: 200
-            statusCode = typeof(statusCode) === 'number' ? statusCode : 200; 
+            statusCode = typeof(statusCode) === 'number' ? statusCode : 200;
             // Use the JSON payload or default: {}
             payload = typeof(payload) === 'object' ? payload : {};
 
